@@ -1,5 +1,3 @@
-## Introduction
-
 ## The final Plots are shown below 
 
 Please check the previews below because github shows an old preview if you click on each png file.
