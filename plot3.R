@@ -14,6 +14,9 @@ endTime <- as.POSIXct(strptime("02/02/2007 23:59:59", format = "%d/%m/%Y %T"))
 houseData <- houseData %>% filter(Date >= startTime & Date <= endTime) %>%
     select(-Time,-DateTime)
 
+# Open Device
+png("plot3.png", width = 480, height = 480)
+
 # Plot
 with(houseData, {
      plot(Date, Sub_metering_1, type = "l", xlab = "", ylab = "Energy Sub Metering")
@@ -22,5 +25,5 @@ with(houseData, {
      legend("topright",legend = colnames(houseData[6:8]), col = c("black","red","blue"), lty = 1)}
 )
 
-dev.copy(png, "plot3.png")
+# Save
 dev.off()

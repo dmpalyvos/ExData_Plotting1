@@ -14,6 +14,9 @@ endTime <- as.POSIXct(strptime("02/02/2007 23:59:59", format = "%d/%m/%Y %T"))
 houseData <- houseData %>% filter(Date >= startTime & Date <= endTime) %>%
     select(-Time,-DateTime)
 
+# Open Device
+png("plot2.png", width = 480, height = 480)
+
 # Plot
 with(houseData, 
      plot(Date, Global_active_power, type = "l",
@@ -21,5 +24,5 @@ with(houseData,
           ylab = "Global Active Power (kilowatts)"
      ))
 
-dev.copy(png, "plot2.png")
+# Save
 dev.off()
